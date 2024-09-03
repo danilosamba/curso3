@@ -2,16 +2,20 @@ function sortear(){
     let quantidade = parseInt(document.getElementById ('quantidade').value);
     let de = parseInt(document.getElementById ('de').value);
     let ate = parseInt(document.getElementById ('ate').value);
-    
-    function verificar(){
-        if(de>ate){
-            
-        }
-        
-        
-    } 
+    if (ate < de){
+        alert('Número final menor que o inicial verifique e tente novamente')
+        reiniciar2()
+        return;
+    }
+   
 
-   verificar();
+    if(quantidade > (ate-de)) {
+        alert('A quantidade de números a serem sorteados é menor que o conjunto solicitado')
+        reiniciar2()
+        return;
+    }
+
+
     let sorteados = [];
     let numero;
 
@@ -32,6 +36,7 @@ function sortear(){
     resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sorteados} </label>`
     alterarStatusBotao();
 }
+
 
 
 
@@ -60,3 +65,10 @@ function reiniciar(){
 
 }
 
+function reiniciar2(){
+    
+        document.getElementById('quantidade').value = '';
+        document.getElementById('de').value = '';
+        document.getElementById('ate').value = '';
+    
+}
