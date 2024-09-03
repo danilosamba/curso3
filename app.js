@@ -2,7 +2,7 @@ function sortear(){
     let quantidade = parseInt(document.getElementById ('quantidade').value);
     let de = parseInt(document.getElementById ('de').value);
     let ate = parseInt(document.getElementById ('ate').value);
-    if (ate < de){
+    if (ate <= de){
         alert('Número final menor que o inicial verifique e tente novamente')
         reiniciar2()
         return;
